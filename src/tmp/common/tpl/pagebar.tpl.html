@@ -1,0 +1,22 @@
+<footer class="panel-footer">
+  <div class="row">
+    <div class="col-sm-4 hidden-xs">当前页面条数
+      <select class="input-sm form-control input-s-sm inline" ng-model="pageSize" ng-change="pageChange('sizeChange')">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="50">100</option>
+      </select>
+    </div>
+    <div class="col-sm-4 text-center"> <small class="text-muted inline m-t-sm m-b-sm">第{{pageObj.currentPage}}页，共{{pageObj.totalPage}}页</small>  </div>
+    <div class="col-sm-4 text-right text-center-xs">
+      <ul class="pagination pagination-sm m-t-none m-b-none">
+          <li ng-click="pageChange('first')" ng-class="{disabled: pageObj.currentPage <= 1}"><a>首页</a></li>
+          <li ng-click="pageChange('prev')" ng-class="{disabled: pageObj.currentPage <= 1}"><a>上一页</a></li>
+          <li ng-click="pageChange('next')" ng-class="{disabled: pageObj.currentPage >= pageObj.totalPage}"><a>下一页</a></li>
+          <li ng-click="pageChange('last')" ng-class="{disabled: pageObj.currentPage >= pageObj.totalPage}"><a>尾页</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

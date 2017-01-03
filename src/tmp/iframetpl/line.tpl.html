@@ -1,0 +1,8 @@
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li ng-repeat="x in names track by $index">
+    	<a class="font-bold"><i class="fa" ng-class="{'fa-bullseye': $index == 0}"></i>
+    	 {{x}}
+    	</a>
+    </li>
+</ul>
+<iframe style="width: 100%; height:94%; border:0;" ng-src="{{showxUrl | trustUrl}}"></iframe>

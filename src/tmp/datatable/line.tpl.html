@@ -1,0 +1,61 @@
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li><a href="index.html" class="font-bold"><i class="fa" ng-class="{'fa-camera': paramName != 'voice', 'fa-microphone': paramName == 'voice'}"></i>组件使用 </a></li>
+    <li class="active font-bold">Datatables</li>
+</ul>
+<section class="panel panel-default" id="table">
+  <header class="panel-heading"> Responsive Table </header>
+  <div class="row text-sm wrapper">
+    <div class="col-sm-5 m-b-xs">
+      <input datetimepicker ng-model="startdate" type="text" name="" class="input-sm form-control" option="datetimeOption">
+
+    </div>
+    <div class="col-sm-4 m-b-xs">
+      <input datetimepicker ng-model="date2" type="text" name="" class="input-sm form-control" option="dateOption">
+    </div>
+    <div class="col-sm-3">
+        <p>{{startdate | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+      <!--<div class="input-group">
+        <input type="text" class="input-sm form-control" placeholder="Search">
+        <span class="input-group-btn">
+        <button class="btn btn-sm btn-default" type="button">Go!</button>
+        </span> </div>-->
+    </div>
+  </div>
+  <div class="table-responsive">
+  <table parentpanel="table" class="table table-striped b-t b-light text-sm">
+    <thead>
+      <tr>
+        <th class="th-sortable" ng-click="sort($event, 'version')">版本<span class="th-sort"> <i class="fa fa-sort-down text"></i> <i class="fa fa-sort-up text-active"></i> <i class="fa fa-sort"></i> </span></th>
+        <th class="th-sortable" ng-click="sort($event, 'value')">value<span class="th-sort"> <i class="fa fa-sort-down text"></i> <i class="fa fa-sort-up text-active"></i> <i class="fa fa-sort"></i> </span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in pageData">
+        <td>{{x.version}}</td>
+        <td>{{x.value}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<my-page-bar data="dp" is-remote-page="false" page-data="pageData"></my-page-bar>
+</section>
+<section class="panel panel-default">
+  <header class="panel-heading"> Responsive Table </header>
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Select2</label>
+      <div class="col-sm-10">
+        <div class="m-b">
+          <select select2 id="select2-option" style="width:260px" ng-model="selected1" option="option1">
+            <optgroup label="{{x.name}}" ng-repeat="x in select1">
+              <option value="{{y.key}}" ng-repeat="y in x.items">{{y.value}}</option>
+            </optgroup>
+          </select><span>selected1的值为：{{selected1}}</span>
+        </div>
+        <div>
+          <input select2 type="hidden" id="select2-tags" style="width:260px" option="option2" ng-model="selected2"><span>selcted2的值为：{{selected2}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

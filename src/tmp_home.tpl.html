@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title><{$title}></title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/assets/tmp/css/app.v2.css" type="text/css" />
+    <!--[if lt IE 9]> <script src="js/ie/html5shiv.js" cache="false"></script> <script src="js/ie/respond.min.js" cache="false"></script> <script src="js/ie/excanvas.js" cache="false"></script> <![endif]-->
+    </head>
+<body>
+<section class="vbox">
+    <header class="bg-black dk header navbar navbar-fixed-top-xs">
+        <div class="navbar-header"> 
+            <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"> <i class="fa fa-bars"></i></a>
+            <a href="" class="navbar-brand" data-toggle="fullscreen">
+                <img src="/assets/tmp/images/logo.png"><span class="plat-title"><{$title}></span></a>
+            <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user"></a>
+        </div>
+    <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
+      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="/assets/tmp/images/avatar.jpg"> </span> Hi, <{$username}> <b class="caret"></b> </a>
+        <ul class="dropdown-menu animated fadeInRight">
+          <span class="arrow top"></span>
+          <li> <a href="docs.html">帮助</a> </li>
+          <li class="divider"></li>
+          <li> <a href="?logout=" >注销</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+  <section>
+    <section class="hbox stretch"> <!-- .aside -->
+      <aside class="bg-black lter aside-md hidden-print" id="nav">
+        <section class="vbox">
+          <section class="w-f scrollable">
+            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"> <!-- nav -->
+              <nav class="nav-primary hidden-xs">
+                  <ul id="left_nav_bar" class="nav">
+                      <li >
+                          <a href="/" >
+                              <i class="fa fa-home icon"><b class="bg-danger"></b></i>
+                              <span>首页</span>
+                          </a>
+                      </li>
+                      <!--<li >
+                          <a href="/assess" target="_blank">
+                              <i class="fa fa-camera icon"><b class="bg-warning"></b></i>
+                              <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+                              </span>
+                              <span>图像评估</span>
+                          </a>
+                          <ul class="nav lt">
+                              <li > <a href="#/feedback/graph" > <i class="fa fa-angle-right"></i> <span>用户反馈</span> </a> </li>
+                          </ul>
+                      </li>-->
+                  </ul>
+              </nav>
+              <!-- / nav --> </div>
+          </section>
+          <footer class="footer lt hidden-xs b-t b-black">
+            <a href="#nav" id="navxs_btn" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-black btn-icon"> <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
+          </footer>
+        </section>
+      </aside>
+      <!-- /.aside -->
+      <section id="content">
+          <section class="vbox">
+              <section class="scrollable padder" ng-view data-ng-init="load()"></section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+      </section>
+      <aside class="bg-light lter b-l aside-md hide" id="notes">
+          <div class="wrapper">Notification</div>
+      </aside>
+    </section>
+  </section>
+</section>
+<script type="text/javascript">window.username = "<{$username}>";</script>
+<script type="text/javascript" src="/assets/tmp/libs/jquery-1.10.2.min.js"></script>
+<script src="/assets/tmp/libs/app.v2.js"></script> <!-- Bootstrap --><!-- App -->
+<script data-baseurl="/assets/tmp" data-main="/assets/tmp/main.js" src="/assets/tmp/libs/require.js" id="main"></script>
+</body>
+</html>
+
